@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          text_2=(EditText) findViewById(R.id.plain_text_input);
          button_1=(Button) findViewById(R.id.button);
          button_1.setOnClickListener(this);
+         if(savedInstanceState != null){
+             text_1.setText(savedInstanceState.getString("text1"));
+             text_2.setText(savedInstanceState.getString("text2"));
+         }
     }
     public void onClick(View view){
         switch (view.getId()){
@@ -30,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         }
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("text2",text_2.getText().toString());
+        savedInstanceState.putString("text1",text_1.getText().toString());
     }
 }
 
