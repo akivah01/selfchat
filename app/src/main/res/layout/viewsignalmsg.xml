@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Type a massage"
-        android:textSize="43sp"
+        android:textSize="50sp"
         android:singleLine="false"
          />
 
